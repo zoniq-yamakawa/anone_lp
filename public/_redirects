@@ -1,0 +1,4 @@
+# Static export can't pre-render unknown invite codes, so every
+# /invite/<code> path is served the same page; client-side JS in
+# src/pages/invite/index.astro reads the code back out of the URL.
+/invite/*  /invite/index.html  200

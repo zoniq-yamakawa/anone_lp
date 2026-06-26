@@ -1,0 +1,42 @@
+---
+interface Props {
+  current?: "company" | "privacy" | "terms" | "contact";
+  background?: string;
+}
+
+const { current, background = "transparent" } = Astro.props;
+
+const links = [
+  { key: "company", href: "/company", label: "運営会社" },
+  { key: "privacy", href: "/privacy", label: "プライバシーポリシー" },
+  { key: "terms", href: "/terms", label: "利用規約" },
+  { key: "contact", href: "/contact", label: "お問い合わせ" },
+] as const;
+
+function linkStyle(key: string) {
+  return key === current
+    ? "color:#C2613F;text-decoration:none;font-size:13.5px;font-weight:700"
+    : "color:#6E6357;text-decoration:none;font-size:13.5px";
+}
+---
+
+<footer style={`border-top:1px solid rgba(61,53,44,0.08);padding:44px 32px;background:${background}`}>
+  <div
+    style="max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px"
+  >
+    <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#3D352C">
+      <div
+        style="width:30px;height:30px;border-radius:50%;background:#E07256;display:flex;align-items:center;justify-content:center;color:#FFF;font-family:'Zen Maru Gothic',sans-serif;font-weight:900;font-size:15px"
+      >
+        あ
+      </div>
+      <span style="font-family:'Zen Maru Gothic',sans-serif;font-weight:700;font-size:18px">あのね</span>
+    </a>
+    <nav style="display:flex;gap:26px;flex-wrap:wrap">
+      {links.map((link) => (
+        <a href={link.href} style={linkStyle(link.key)}>{link.label}</a>
+      ))}
+    </nav>
+    <span style="font-size:13px;color:#A89C8C">© 2026 Anone Inc.</span>
+  </div>
+</footer>

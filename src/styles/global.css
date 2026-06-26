@@ -1,0 +1,5 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body{margin:0;background:#FBF5EA}
+
+@keyframes anone-float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-14px) rotate(-2deg)}}
+@keyframes anone-blob{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(0,-18px) scale(1.04)}}

@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["<TEAM_ID>.com.zoniq.anone"],
+        "components": [
+          { "/": "/invite/*", "comment": "ペアリング招待" }
+        ]
+      }
+    ]
+  }
+}
